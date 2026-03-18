@@ -8,7 +8,7 @@ Credit Core is a comprehensive financial management system for Crecosa, designed
 
 ## Project Structure (New Standard)
 
-- **APIs**: `api-credit`, `api-report`, `api-guarantee`, `api-storage`.
+- **APIs**: `api-credit`, `api-report`, `api-guarantee`.
 - **UIs**: 
   - `ui-legacy`: Main operational dashboard (Angular 11, Node 14).
   - `ui-backoffice`: Internal administrative tools (Modern Angular).

@@ -20,10 +20,6 @@
             "type": "dotnet",
             "projectPath": "api-report/reportApi/reportApi.csproj"
         },
-        "api-storage": {
-            "type": "dotnet",
-            "projectPath": "api-storage/MediaStorageApi/MediaStorage.Api/MediaStorage.Api.csproj"
-        },
         "api-credit-legacy": {
             "type": "dotnet-framework",
             "projectPath": "api-credit-legacy/ctPaga/ctPagaInternal.csproj"

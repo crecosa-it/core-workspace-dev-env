@@ -18,7 +18,7 @@ Each application runs on its own isolated IIS/FTP instance on the development se
 | `api-report`    | 1003     | .NET API   | Reporting Service        |
 | `ui-backoffice` | 1004     | Angular UI | Internal Admin Tools     |
 | `api-guarantee` | 1006     | .NET API   | Guarantee Management API |
-| `api-storage`   | TBD      | .NET API   | File Storage Service     |
+
 
 ## Local Environment Requirements
 

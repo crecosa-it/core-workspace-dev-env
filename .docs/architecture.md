@@ -6,7 +6,7 @@
 
 - **Framework**: .NET 8 / .NET 10 (Preview).
 - **Architecture**: **Vertical Slice Architecture**.
-- **Folders**: `api-credit`, `api-report`, `api-guarantee`, `api-storage`.
+- **Folders**: `api-credit`, `api-report`, `api-guarantee`.
 
 ### Frontend
 
