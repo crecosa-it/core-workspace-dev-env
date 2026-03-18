@@ -1,37 +1,37 @@
 # Credit Core Workspace - Development Environment (core-workspace-dev-env)
 
-Este repositorio contiene las configuraciones, scripts, documentación e infraestructura (como Docker Compose) globales necesarias para levantar y administrar el entorno de desarrollo local para el proyecto **Credit Core**.
+This repository contains the global configurations, scripts, documentation, and infrastructure (such as Docker Compose) required to run and manage the local development environment for the **Credit Core** project.
 
-> **Nota:** Este repositorio de entorno ignora los proyectos reales de código (APIs y UIs). Cada microservicio (API) y componente de Frontend (UI) se gestiona en su propio repositorio individual.
+> **Note:** This environment repository explicitly ignores the actual code projects (APIs and UIs). Each microservice (API) and frontend application (UI) is managed in its own dedicated repository.
 
-## 📂 ¿Qué contiene este repositorio?
+## 📂 What's inside this repository?
 
-- **Configuración de Docker (`docker-compose.yml`, `init-db.sql`):** Para levantar fácilmente las bases de datos y servicios de infraestructura requeridos de forma local.
-- **Scripts de inicialización y sincronización:** Scripts en Python (`process_sync.py`), PowerShell (`run_all.ps1`) y SQL (`sync_permissions.sql`) para automatizar el alta de la base de datos o correr servicios.
-- **Workspace de IDE:** Archivos de configuración general (como `manage-credits.code-workspace` o la carpeta `.vscode/`) para integrar todos los sub-repositorios en un gran proyecto.
-- **Reglas del agente (`.agent/`):** Habilidades o configuraciones personalizadas para los asistentes de inteligencia artificial (`db-tools`, `skills`).
-- **Documentación (`.docs/`):** Documentos de arquitectura y despliegue del proyecto en general.
-- **Herramientas de despliegue (`.tools/`):** Scripts y configuraciones para automatizar despliegues o validaciones de ambiente.
+- **Docker Configuration (`docker-compose.yml`, `init-db.sql`):** Easily spin up the required local databases and infrastructure services.
+- **Initialization and Synchronization scripts:** Python (`process_sync.py`), PowerShell (`run_all.ps1`), and SQL (`sync_permissions.sql`) scripts to automate database setup or run background services.
+- **IDE Workspace files:** General configuration files (like `manage-credits.code-workspace` or the `.vscode/` setup) to integrate all sub-repositories into a unified project view.
+- **Agent Rules (`.agent/`):** Custom AI agent skills and configurations (`db-tools`, `skills`).
+- **Documentation (`.docs/`):** High-level global project architecture and deployment manuals.
+- **Deployment Tools (`.tools/`):** Scripts and configurations to automate local deployments or environment validations.
 
-## 🚀 Cómo empezar (Local Setup)
+## 🚀 Getting Started (Local Setup)
 
-1. **Clona este repositorio base:**
-   Asegúrate de clonar esto en el que será el directorio raíz de todos tus proyectos de Credit Core.
+1. **Clone this base repository:**
+   Make sure to clone this repository into what will become the root folder containing all Credit Core projects.
    ```bash
    git clone git@github.com:crecosa-it/core-workspace-dev-env.git Credit_Core_Work_Space
    cd Credit_Core_Work_Space
    ```
 
-2. **Clona los repositorios de las APIs y UIs (dentro de este mismo directorio):**
-   Las APIs (ej. `api-credit`, `api-backoffice`) y las UIs (ej. `ui-backoffice`, `ui-legacy`) deberán ser clonadas aquí adentro. Estas carpetas ya se ignoran vía `.gitignore`.
+2. **Clone API and UI repositories (inside this directory):**
+   APIs (e.g., `api-credit`, `api-backoffice`) and UIs (e.g., `ui-legacy`, `ui-backoffice`) must be cloned directly into this root folder. These subdirectories are properly ignored by the root `.gitignore`.
 
-3. **Inicia la infraestructura:**
-   Dependiendo de lo que necesites probar, puedes levantar los servicios requeridos (bases de datos, message brokers, etc.):
+3. **Start the local infrastructure:**
+   Depending on what you need to test, bring up the necessary services (databases, message brokers, etc.):
    ```bash
    docker-compose up -d
    ```
 
-## 📝 Reglas de uso
+## 📝 Usage Rules
 
-- **No comprometer código de las aplicaciones aquí.** Este repo es estrictamente para la configuración del *Workspace*, scripts y orquestación.
-- Cualquier script de automatización o configuración de entorno local nuevo debería agregarse aquí para el uso de todo el equipo de ingeniería.
+- **Do not commit application code here.** This repository is strictly for *Workspace* configurations, orchestration, and global scripts.
+- Any new environment setup scripts or automation tools should be added here so they can be securely shared across the entire engineering team.
