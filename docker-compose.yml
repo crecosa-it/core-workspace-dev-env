@@ -1,0 +1,112 @@
+services:
+  db:
+    image: mariadb:10.3
+    container_name: credit-core-db
+    restart: always
+    environment:
+      MARIADB_ROOT_PASSWORD: root
+      MARIADB_DATABASE: ctpagabd
+      MARIADB_USER: admin
+      MARIADB_PASSWORD: It.crecosa01
+    ports:
+      - "9699:3306"
+    volumes:
+      - db_data:/var/lib/mysql
+      - ./init-db.sql:/docker-entrypoint-initdb.d/init-db.sql
+
+  api-credit:
+    build:
+      context: ./api-credit
+      dockerfile: creApiRest/Dockerfile
+    container_name: credit-api
+    restart: always
+    ports:
+      - "9090:9090"
+      - "9091:9091"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Production
+      - ASPNETCORE_HTTP_PORTS=9090
+      - ASPNETCORE_HTTPS_PORTS=9091
+      - ConnectionStrings__DefaultConnection=server=db;database=ctpagabd;uid=admin;pwd=It.crecosa01;ConvertZeroDateTime=True
+      - ConnectionStrings__LogDb=server=db;database=ctpagabd_logs;uid=admin;pwd=It.crecosa01;ConvertZeroDateTime=True
+      - ConnectionStrings__SmcfCobroConnection=server=db;database=SMCF_COBRO;uid=admin;pwd=It.crecosa01
+      - ConnectionStrings__SmcfConnection=server=db;database=simicrofin_crecosa;uid=admin;pwd=It.crecosa01
+      - ConnectionStrings__GuaranteeConnection=server=db;database=guaranteedb;uid=admin;pwd=It.crecosa01
+      - ConnectionStrings__DbreportesConnection=server=db;database=dbreportes;uid=admin;pwd=It.crecosa01
+      - ConnectionStrings__filestorageConnection=server=db;database=filestoragedb;uid=admin;pwd=It.crecosa01
+    depends_on:
+      - db
+    extra_hosts:
+      - "legacy-api:host-gateway"
+
+  api-guarantee:
+    build:
+      context: ./api-guarantee
+      dockerfile: GuaranteAPI/Dockerfile
+    container_name: guarantee-api
+    restart: always
+    ports:
+      - "9095:80"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Production
+      - ConnectionStrings__GuaranteeConnection=server=db;database=guaranteedb;uid=admin;pwd=It.crecosa01
+    depends_on:
+      - db
+
+  api-report:
+    build:
+      context: ./api-report
+      dockerfile: reportApi/Dockerfile
+    container_name: report-api
+    restart: always
+    ports:
+      - "9092:80"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Production
+      - ConnectionStrings__DefaultConnection=server=db;database=ctpagabd;uid=admin;pwd=It.crecosa01;ConvertZeroDateTime=True;AllowZeroDateTime=True
+    depends_on:
+      - db
+
+  api-backoffice:
+    build:
+      context: ./api-backoffice/BackOfficeManager.Api
+      dockerfile: Dockerfile
+    container_name: backoffice-api
+    restart: always
+    ports:
+      - "9096:8080"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Production
+      - ASPNETCORE_HTTP_PORTS=8080
+      - ConnectionStrings__CTPAGAConnection=server=db;database=ctpagabd;uid=admin;pwd=It.crecosa01;ConvertZeroDateTime=True
+      - ConnectionStrings__FILESTORAGEConnection=server=db;database=filestoragedb;uid=admin;pwd=It.crecosa01
+    depends_on:
+      - db
+
+  ui-backoffice:
+    build:
+      context: ./ui-backoffice
+      dockerfile: Dockerfile
+      args:
+        - API_BACKOFFICE_URL=http://localhost:9096/api
+    container_name: ui-backoffice
+    restart: always
+    ports:
+      - "8080:80"
+    depends_on:
+      - api-credit
+      - api-backoffice
+
+  ui-legacy:
+    build:
+      context: ./ui-legacy
+      dockerfile: Dockerfile
+    container_name: ui-legacy
+    restart: always
+    ports:
+      - "8081:80"
+    depends_on:
+      - api-credit
+
+volumes:
+  db_data:

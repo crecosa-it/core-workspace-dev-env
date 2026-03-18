@@ -1,0 +1,17 @@
+{
+    "environments": {
+        "test": {
+            "server": "ftp://192.168.1.177",
+            "username": "administrador",
+            "password": "It.crecosa01",
+            "ports": {
+                "api-credit": 1001,
+                "ui-legacy": 1002,
+                "api-report": 1003,
+                "ui-backoffice": 1004,
+                "api-guarantee": 1006,
+                "api-credit-legacy": 1007
+            }
+        }
+    }
+}

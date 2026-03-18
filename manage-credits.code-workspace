@@ -1,0 +1,43 @@
+{
+    "folders": [
+        {
+            "name": "ROOT: Credit Core Workspace",
+            "path": "."
+        },
+        {
+            "name": "UI: BackOffice",
+            "path": "ui-backoffice"
+        },
+        {
+            "name": "UI: Legacy",
+            "path": "ui-legacy"
+        },
+        {
+            "name": "API: Credit",
+            "path": "api-credit"
+        },
+        {
+            "name": "API: Report",
+            "path": "api-report"
+        },
+        {
+            "name": "API: Guarantee",
+            "path": "api-guarantee"
+        },
+        {
+            "name": "API: Storage",
+            "path": "api-storage"
+        }
+    ],
+    "settings": {
+        "git.autoRepositoryDetection": true,
+        "git.scanRepositories": [
+            "ui-backoffice",
+            "ui-legacy",
+            "api-credit",
+            "api-report",
+            "api-guarantee",
+            "api-storage"
+        ]
+    }
+}

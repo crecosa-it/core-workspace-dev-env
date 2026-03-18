@@ -1,0 +1,10 @@
+2026-03-12T06:10:33.449Z | INFO | Starting MCP MySQL server from: C:\Users\devuser\AppData\Local\npm-cache\_npx\080bc9f59514dad9\node_modules\@liangshanli\mcp-server-mysql\src\server-final.js
+2026-03-12T06:10:33.456Z | INFO | Starting MCP MySQL server with environment: | {"MYSQL_HOST":"192.168.1.85","MYSQL_PORT":"9699","MYSQL_USER":"admin","MYSQL_DATABASE":"ctpagabd","READONLY":"false","ALLOW_DDL":"false","ALLOW_DROP":"false","ALLOW_DELETE":"false","TOOL_PREFIX":"(not set)","PROJECT_NAME":"(not set)","MCP_LOG_DIR":"./.setting","MCP_DDL_LOG_FILE":"ddl.sql"}
+2026-03-12T06:10:33.470Z | INFO | MCP MySQL server process started with PID: 3456
+2026-03-12T06:10:33.471Z | INFO | Signal handlers registered for SIGINT and SIGTERM
+2026-03-12T06:10:33.473Z | INFO | Press Ctrl+C to gracefully shutdown the server
+2026-03-12T06:10:51.072Z | INFO | Received SIGINT, shutting down server...
+2026-03-12T06:10:51.075Z | INFO | Sent SIGINT signal to server process 3456
+2026-03-12T06:10:51.089Z | INFO | MCP MySQL server exited with code: null
+2026-03-12T06:10:52.092Z | INFO | CLI process exiting after server shutdown
+2026-03-12T06:10:52.094Z | INFO | CLI process exiting with code: 0

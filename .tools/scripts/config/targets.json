@@ -1,0 +1,32 @@
+{
+    "targets": {
+        "api-credit": {
+            "type": "dotnet",
+            "projectPath": "api-credit/creApiRest/creApiRest.csproj"
+        },
+        "ui-backoffice": {
+            "type": "angular",
+            "projectPath": "ui-backoffice"
+        },
+        "ui-legacy": {
+            "type": "angular-legacy",
+            "projectPath": "ui-legacy"
+        },
+        "api-guarantee": {
+            "type": "dotnet",
+            "projectPath": "api-guarantee/GuaranteAPI/GuaranteAPI.csproj"
+        },
+        "api-report": {
+            "type": "dotnet",
+            "projectPath": "api-report/reportApi/reportApi.csproj"
+        },
+        "api-storage": {
+            "type": "dotnet",
+            "projectPath": "api-storage/MediaStorageApi/MediaStorage.Api/MediaStorage.Api.csproj"
+        },
+        "api-credit-legacy": {
+            "type": "dotnet-framework",
+            "projectPath": "api-credit-legacy/ctPaga/ctPagaInternal.csproj"
+        }
+    }
+}

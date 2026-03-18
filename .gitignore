@@ -1,0 +1,25 @@
+# Ignore API repositories
+api-*/
+
+# Ignore UI repositories
+ui-*/
+
+# Ignore agent and local tools states
+.gemini/
+.playwright-mcp/
+
+# General IDE and OS files
+.DS_Store
+Thumbs.db
+*.suo
+*.user
+
+# Consider keeping .vscode if it contains shared workspace configurations, 
+# otherwise uncomment the next line to ignore it:
+# .vscode/
+
+# Consider keeping .agent if it contains shared workspace skills, 
+# otherwise uncomment the next line to ignore it:
+# .agent/
+
+# Consider keeping .github or .vscode workflows.

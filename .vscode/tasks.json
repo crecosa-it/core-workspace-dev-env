@@ -1,0 +1,172 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "--- RUN ALL PROJECTS ---",
+            "dependsOn": [
+                "Run UI Legacy (Node 14)",
+                "Run API Credit",
+                "Run UI BackOffice",
+                "Run API Report",
+                "Run API Guarantee",
+                "Run API Credit Legacy"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "presentation": {
+                "reveal": "always",
+                "panel": "shared"
+            }
+        },
+        {
+            "label": "Run UI Legacy (Node 14)",
+            "type": "shell",
+            "command": "nvm use 14.17.3; npm start",
+            "options": {
+                "cwd": "${workspaceFolder}/ui-legacy"
+            },
+            "presentation": {
+                "reveal": "always",
+                "panel": "new",
+                "group": "credit-core"
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "Run API Credit",
+            "type": "shell",
+            "command": "dotnet run",
+            "options": {
+                "cwd": "${workspaceFolder}/api-credit/creApiRest"
+            },
+            "presentation": {
+                "reveal": "always",
+                "panel": "new",
+                "group": "credit-core"
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "Run UI BackOffice",
+            "type": "shell",
+            "command": "npm start",
+            "options": {
+                "cwd": "${workspaceFolder}/ui-backoffice"
+            },
+            "presentation": {
+                "reveal": "always",
+                "panel": "new",
+                "group": "credit-core"
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "Run API Report",
+            "type": "shell",
+            "command": "dotnet run",
+            "options": {
+                "cwd": "${workspaceFolder}/api-report/reportApi"
+            },
+            "presentation": {
+                "reveal": "always",
+                "panel": "new",
+                "group": "credit-core"
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "Run API Guarantee",
+            "type": "shell",
+            "command": "dotnet run",
+            "options": {
+                "cwd": "${workspaceFolder}/api-guarantee/GuaranteAPI"
+            },
+            "presentation": {
+                "reveal": "always",
+                "panel": "new",
+                "group": "credit-core"
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "Run API Credit Legacy",
+            "type": "shell",
+            "command": "C:\\Program Files\\IIS Express\\iisexpress.exe",
+            "args": [
+                "/path:${workspaceFolder}\\api-credit-legacy\\ctPaga",
+                "/port:51184"
+            ],
+            "presentation": {
+                "reveal": "always",
+                "panel": "new",
+                "group": "credit-core"
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "🚀 DEPLOY: API to Test Server",
+            "type": "shell",
+            "command": "pwsh",
+            "args": [
+                "-File",
+                "${workspaceFolder}/.tools/scripts/deploy/deploy-api.ps1",
+                "-TargetName",
+                "${input:apiTarget}",
+                "-Env",
+                "test"
+            ],
+            "group": "build",
+            "presentation": {
+                "reveal": "always",
+                "panel": "new"
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "🚀 DEPLOY: UI to Test Server",
+            "type": "shell",
+            "command": "pwsh",
+            "args": [
+                "-File",
+                "${workspaceFolder}/.tools/scripts/deploy/deploy-ui.ps1",
+                "-TargetName",
+                "${input:uiTarget}",
+                "-Env",
+                "test"
+            ],
+            "group": "build",
+            "presentation": {
+                "reveal": "always",
+                "panel": "new"
+            },
+            "problemMatcher": []
+        }
+    ],
+    "inputs": [
+        {
+            "id": "apiTarget",
+            "type": "pickString",
+            "description": "Select the API to deploy",
+            "options": [
+                "api-credit",
+                "api-report",
+                "api-guarantee",
+                "api-storage",
+                "api-credit-legacy"
+            ],
+            "default": "api-credit"
+        },
+        {
+            "id": "uiTarget",
+            "type": "pickString",
+            "description": "Select the UI to deploy",
+            "options": [
+                "ui-backoffice",
+                "ui-legacy"
+            ],
+            "default": "ui-backoffice"
+        }
+    ]
+}
