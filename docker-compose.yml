@@ -60,10 +60,12 @@ services:
     container_name: report-api
     restart: always
     ports:
-      - "9092:80"
+      - "9092:8080"
     environment:
       - ASPNETCORE_ENVIRONMENT=Production
       - ConnectionStrings__DefaultConnection=server=db;database=ctpagabd;uid=admin;pwd=It.crecosa01;ConvertZeroDateTime=True;AllowZeroDateTime=True
+      - ConnectionStrings__ReportsConnection=server=db;database=rptdb;uid=admin;pwd=It.crecosa01
+      - ConnectionStrings__GuaranteesConnection=server=db;database=guaranteedb;uid=admin;pwd=It.crecosa01
     depends_on:
       - db
 

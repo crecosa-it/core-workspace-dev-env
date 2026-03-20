@@ -142,6 +142,23 @@
                 "panel": "new"
             },
             "problemMatcher": []
+        },
+        {
+            "label": "🛠️ PUBLISH: API Credit Legacy to Local IIS",
+            "type": "shell",
+            "command": "powershell",
+            "args": [
+                "-ExecutionPolicy",
+                "Bypass",
+                "-File",
+                "${workspaceFolder}/publish_legacy_iis.ps1"
+            ],
+            "group": "build",
+            "presentation": {
+                "reveal": "always",
+                "panel": "new"
+            },
+            "problemMatcher": []
         }
     ],
     "inputs": [
