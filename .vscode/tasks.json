@@ -9,7 +9,8 @@
                 "Run UI BackOffice",
                 "Run API Report",
                 "Run API Guarantee",
-                "Run API Credit Legacy"
+                "Run API Credit Legacy",
+                "Run API BackOffice"
             ],
             "group": {
                 "kind": "build",
@@ -106,6 +107,20 @@
             "problemMatcher": []
         },
         {
+            "label": "Run API BackOffice",
+            "type": "shell",
+            "command": "dotnet watch run",
+            "options": {
+                "cwd": "${workspaceFolder}/api-backoffice/BackOfficeManager.Api"
+            },
+            "presentation": {
+                "reveal": "always",
+                "panel": "new",
+                "group": "credit-core"
+            },
+            "problemMatcher": []
+        },
+        {
             "label": "🚀 DEPLOY: API to Test Server",
             "type": "shell",
             "command": "pwsh",
@@ -171,7 +186,8 @@
                 "api-report",
                 "api-guarantee",
                 "api-storage",
-                "api-credit-legacy"
+                "api-credit-legacy",
+                "api-backoffice"
             ],
             "default": "api-credit"
         },

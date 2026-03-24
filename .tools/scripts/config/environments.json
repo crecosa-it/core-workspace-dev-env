@@ -10,7 +10,8 @@
                 "api-report": 1003,
                 "ui-backoffice": 1004,
                 "api-guarantee": 1006,
-                "api-credit-legacy": 1007
+                "api-credit-legacy": 1007,
+                "api-backoffice": 1005
             }
         }
     }

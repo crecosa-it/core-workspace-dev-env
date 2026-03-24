@@ -23,6 +23,10 @@
         "api-credit-legacy": {
             "type": "dotnet-framework",
             "projectPath": "api-credit-legacy/ctPaga/ctPagaInternal.csproj"
+        },
+        "api-backoffice": {
+            "type": "dotnet",
+            "projectPath": "api-backoffice/BackOfficeManager.Api/BackOfficeManager.Api.csproj"
         }
     }
 }
