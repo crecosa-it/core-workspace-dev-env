@@ -82,6 +82,9 @@ services:
       - ASPNETCORE_HTTP_PORTS=8080
       - ConnectionStrings__CTPAGAConnection=server=db;database=ctpagabd;uid=admin;pwd=It.crecosa01;ConvertZeroDateTime=True
       - ConnectionStrings__FILESTORAGEConnection=server=db;database=filestoragedb;uid=admin;pwd=It.crecosa01
+      - ConnectionStrings__AdmConnection=server=mariadb;database=admdb;uid=root;pwd=password
+      - ConnectionStrings__AuthConnection=server=mariadb;database=autdb;uid=root;pwd=password
+      - ConnectionStrings__BllDBConnection=server=mariadb;database=blldb;uid=root;pwd=password
     depends_on:
       - db
 
@@ -112,3 +115,8 @@ services:
 
 volumes:
   db_data:
+
+networks:
+  default:
+    external: true
+    name: credit-core-network
