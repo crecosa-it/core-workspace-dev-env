@@ -71,7 +71,7 @@ services:
 
   api-backoffice:
     build:
-      context: ./api-backoffice/BackOfficeManager.Api
+      context: ./api-backoffice
       dockerfile: Dockerfile
     container_name: backoffice-api
     restart: always

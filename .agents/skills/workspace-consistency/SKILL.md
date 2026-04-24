@@ -1,4 +1,5 @@
 ---
+name: workspace-consistency
 description: Reviews and ensures the consistency of the workspace configuration (repositories added in docs, config, vscode, tools), preventing deleted services from leaving garbage or new services from going undocumented. Must not leak secrets.
 ---
 
@@ -32,7 +33,7 @@ Verify that ALL the prefixed and active folders discovered above exist strictly 
 
 *   If a folder has been deleted or its logic is obsolete, it MUST be purged from **all** the files listed in Step 2. Use global `grep_search` (with flags to search hidden files if necessary) to ensure complete eradication of the orphaned service's footprint.
 
-### 4. 🚨 Security and Secrets Rules
+### 4. Security and Secrets Rules
 
 *   **Never exfiltrate, expose, or write** real secrets (passwords, private connection strings, AWS keys, JWT tokens, unauthorized plain-text internal IPs) in the output reports of this skill.
 *   If a script or docker-compose file contains hardcoded secrets (e.g., `password=...`), ignore them during the structural consistency evaluation. Focus solely on **service names, ports, and architecture**.
@@ -41,6 +42,6 @@ Verify that ALL the prefixed and active folders discovered above exist strictly 
 
 After running this skill, the assistant must output a final structured report listing:
 
-1.  The specific discrepancies found (e.g., "`api-x` is in the root directory but missing in the README").
+1.  The specific discrepancies found (e.g., `"api-x" is in the root directory but missing in the README`).
 2.  The automated actions taken (which exact files were updated to repair the inconsistency).
 3.  Warnings about potential orphaned repositories or lingering configurations.

@@ -20,13 +20,13 @@ description: Checklist and code conventions for the Credit Core project. Covers 
 Features/
   [FeatureName]/
     Application/
-      Commands/     ← Write commands (CQRS)
-      Queries/      ← Read queries
-      DTOs/         ← Data transfer objects
-      Utilities/    ← Validations, business rules
+      Commands/     <- Write commands (CQRS)
+      Queries/      <- Read queries
+      DTOs/         <- Data transfer objects
+      Utilities/    <- Validations, business rules
     Domain/
-      Entities/     ← Domain entities
-      Interfaces/   ← Repository contracts
+      Entities/     <- Domain entities
+      Interfaces/   <- Repository contracts
 ```
 
 ### Code Rules

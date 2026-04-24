@@ -20,7 +20,7 @@ GET /rest/api/3/search/jql?jql=project='CC'&maxResults=10&fields=summary,status,
 
 ## How to Create a Ticket
 Always ask the user for:
-1. **Summary** (ticket title) — mandatory
+1. **Summary** (ticket title) - mandatory
 2. **Type**: Story / Bug / Task / Sub-task
 3. **Priority**: Highest / High / Medium / Low
 4. **Description**: details, steps to reproduce (if Bug), acceptance criteria
@@ -39,7 +39,7 @@ Minimum payload:
 ```
 
 ## Ticket Statuses (Typical Flow)
-- `To Do` → `In Progress` → `In Review` → `Done`
+- `To Do` -> `In Progress` -> `In Review` -> `Done`
 - To move status use: `POST /rest/api/3/issue/{issueKey}/transitions`
 
 ## Team Conventions

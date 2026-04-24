@@ -1,0 +1,35 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Authenticator (Dev)",
+            "request": "launch",
+            "type": "dart",
+            "cwd": "ui-authenticator",
+            "program": "ui-authenticator/lib/main.dart",
+            "args": [
+                "--dart-define-from-file=config.json"
+            ]
+        },
+        {
+            "name": "Authenticator (Test)",
+            "request": "launch",
+            "type": "dart",
+            "cwd": "ui-authenticator",
+            "program": "ui-authenticator/lib/main.dart",
+            "args": [
+                "--dart-define-from-file=config.test.json"
+            ]
+        },
+        {
+            "name": "Authenticator (Prod)",
+            "request": "launch",
+            "type": "dart",
+            "cwd": "ui-authenticator",
+            "program": "ui-authenticator/lib/main.dart",
+            "args": [
+                "--dart-define-from-file=config.prod.json"
+            ]
+        }
+    ]
+}

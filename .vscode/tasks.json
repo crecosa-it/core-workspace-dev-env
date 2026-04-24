@@ -10,7 +10,8 @@
                 "Run API Report",
                 "Run API Guarantee",
                 "Run API Credit Legacy",
-                "Run API BackOffice"
+                "Run API BackOffice",
+                "Run Authenticator"
             ],
             "group": {
                 "kind": "build",
@@ -172,6 +173,40 @@
             "presentation": {
                 "reveal": "always",
                 "panel": "new"
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "Run Authenticator",
+            "type": "shell",
+            "command": "flutter run --dart-define-from-file=config.json",
+            "options": {
+                "cwd": "${workspaceFolder}/ui-authenticator"
+            },
+            "presentation": {
+                "reveal": "always",
+                "panel": "new",
+                "group": "credit-core"
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "🚀 Build Authenticator",
+            "type": "shell",
+            "command": "powershell",
+            "args": [
+                "-ExecutionPolicy",
+                "Bypass",
+                "-File",
+                "${workspaceFolder}/ui-authenticator/build_app.ps1"
+            ],
+            "group": "build",
+            "presentation": {
+                "reveal": "always",
+                "panel": "new",
+                "focus": true,
+                "echo": true,
+                "clear": true
             },
             "problemMatcher": []
         }

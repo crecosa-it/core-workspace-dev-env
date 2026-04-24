@@ -13,6 +13,7 @@ ui-*/
 Thumbs.db
 *.suo
 *.user
+.env
 
 # Consider keeping .vscode if it contains shared workspace configurations, 
 # otherwise uncomment the next line to ignore it:

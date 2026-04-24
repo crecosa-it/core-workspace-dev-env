@@ -5,19 +5,19 @@ description: Safe procedure to query and analyze Credit Core MySQL databases. De
 
 # Skill: Database Query (Credit Core)
 
-## ⚡ How to Use the Database MCP (CRITICAL - Read First)
+## How to Use the Database MCP (Critical)
 
 The database MCP is **ALREADY CONFIGURED** and available as a direct tool.
 
 ### Correct Tool: `mcp_database_sql_query`
 
 ```
-CORRECT ✅:   mcp_database_sql_query(sql: "SELECT * FROM table LIMIT 5")
-INCORRECT ❌:  list_resources(ServerName: "database")
-INCORRECT ❌:  read_resource(ServerName: "database", Uri: "...")
+CORRECT:   mcp_database_sql_query(sql: "SELECT * FROM table LIMIT 5")
+INCORRECT: list_resources(ServerName: "database")
+INCORRECT: read_resource(ServerName: "database", Uri: "...")
 ```
 
-> `list_resources` and `read_resource` do NOT work with this MCP — the server exposes **tools**, not resources. The mapped tool is `mcp_database_sql_query`.
+> `list_resources` and `read_resource` do NOT work with this MCP. The server exposes **tools**, not resources. The mapped tool is `mcp_database_sql_query`.
 
 ### Immediate Usage Examples
 
@@ -28,14 +28,14 @@ mcp_database_sql_query(sql="SHOW TABLES")
 ```
 
 ### Other Available MCP Tools
-- `mcp_database_get_database_info` — General server and database info
-- `mcp_database_check_permissions` — Check available permissions (DDL, DROP, etc.)
-- `mcp_database_get_operation_logs` — View operation logs
-- `mcp_database_get_ddl_sql_logs` — View DDL logs
+- `mcp_database_get_database_info` - General server and database info
+- `mcp_database_check_permissions` - Check available permissions (DDL, DROP, etc.)
+- `mcp_database_get_operation_logs` - View operation logs
+- `mcp_database_get_ddl_sql_logs` - View DDL logs
 
 ---
 
-## 🛠️ Fallback Tool (When MCP fails)
+## Fallback Tool (When MCP fails)
 
 If the database MCP returns connection errors, use the local Python tool:
 
@@ -46,7 +46,6 @@ python d:\Proyectos\Credit_Core_Work_Space\.agent\scripts\db-tools\db_explorer.p
 # Query specific table (e.g., filestoragedb.File)
 python d:\Proyectos\Credit_Core_Work_Space\.agent\scripts\db-tools\db_explorer.py --action query --db filestoragedb --sql "SELECT * FROM File LIMIT 5"
 ```
-
 
 ---
 

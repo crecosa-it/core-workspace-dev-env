@@ -1,0 +1,27 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "mcp": {
+    "database": {
+      "type": "local",
+      "command": [
+        "npx",
+        "-y",
+        "@liangshanli/mcp-server-mysql"
+      ],
+      "enabled": true,
+      "environment": {
+        "MYSQL_HOST": "192.168.2.33",
+        "MYSQL_PORT": "9699",
+        "MYSQL_USER": "admin",
+        "MYSQL_PASSWORD": "It.crecosa01",
+        "MYSQL_DATABASE": "filestoragedb",
+        "READONLY": "true",
+        "ALLOW_DDL": "true",
+        "ALLOW_DROP": "false",
+        "ALLOW_DELETE": "false",
+        "MCP_LOG_DIR": "./.setting",
+        "MCP_DDL_LOG_FILE": "ddl.sql"
+      }
+    }
+  }
+}

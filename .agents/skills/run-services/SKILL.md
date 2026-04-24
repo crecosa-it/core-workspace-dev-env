@@ -48,8 +48,8 @@ See `credit-api/creApiRest/appsettings.json` for:
 - AWS S3 credentials
 
 ## Typical Ports (Inferred)
-- `credit-api` → check in `launchSettings.json`
-- Angular apps → `4200` by default (`ng serve`)
+- `credit-api` -> check in `launchSettings.json`
+- Angular apps -> `4200` by default (`ng serve`)
 
 ## Common Troubleshooting
 - If DB connection fails: verify that `192.168.1.85:9699` is accessible on the local network.

@@ -1,5 +1,6 @@
 ---
-description: Guide and architectural pattern for creating new reports in the api-report service. Covers the Strategy Pattern, Clean Architecture layers, DataHandlers, PdfHandlers, and HTML templates. 
+name: report-generation
+description: Guide and architectural pattern for creating new reports in the api-report service. Covers the Strategy Pattern, Clean Architecture layers, DataHandlers, PdfHandlers, and HTML templates.
 ---
 
 # Skill: Credit Core Report Generation Pattern
@@ -32,7 +33,7 @@ The reporting module uses a **Vertical Slice** Clean Architecture joined with a 
    - Create a dedicated `DbContext` (e.g., `GuaranteesContext.cs`) with its own connection string in `appsettings.json`.
    - Inject both contexts into the repository to maintain independence and support multi-server production environments.
 
-## 🚀 Step-by-Step: Adding a New Report
+## Step-by-Step: Adding a New Report
 
 When instructed to create a new report, execute exactly these five steps:
 
@@ -54,20 +55,19 @@ Modify `Infrastructure/Reporting/ReportStrategyFactory.cs` to map the specific s
 
 ### Step 5: Add the HTML Template
 
-
 - **Scalar Fields:** Use single braces `{PropertyName}` (e.g., `<p>{ClientName}</p>`).
 - **Lists/Loops:** Use `{{FOR:ListName}}` and `{{ENDFOR:ListName}}` (e.g., `{{FOR:Guarantees}} <tr><td>{{Value}}</td></tr> {{ENDFOR:Guarantees}}`).
 - **Conditionals:** Use `{{IF:PropertyName}}` and `{{ENDIF:PropertyName}}`.
 
 File location: `Infrastructure/Reporting/Templates/[ReportName].html`.
 
-**🚨 Consistent Header & Aesthetic Rules:**
+**Consistent Header & Aesthetic Rules:**
 1. **No CSS Variables:** The HTML-to-PDF converter does NOT support CSS variables (`var(--...)`). All colors and dimensions must be hardcoded as hex values (e.g., `#0a4d8c`).
 2. **Minimalist Design:** Avoid heavy use of solid primary colors as backgrounds (e.g., solid blue banners). Use white space, thin borders (1px/1.5px), and light background tints (`#f8fafc`, `#f1f5f9`) for a professional, printable result.
 3. **Branding:** Use the Crecosa primary blue (`#0a4d8c`) primarily for titles, bold accents, and thin borders, not for full-page blocks.
 4. **Header Consistency:** All new report templates MUST share a consistent header design containing the company logo, report title, evaluation date, and client name, following the layout established in `BalanceSheet.html` or `BusinessAnalystDetailed.html`.
 
-## 🛠 Conventions and Formatting
+## Conventions and Formatting
 
 - **Currency:** Use `ReportFormattingUtils.FormatCurrency(amount, currencyCode)` for any monetary values.
 - **Decimals:** Format explicitly as `.ToString("F2")` in DataHandlers or use clear formatting in the HTML.

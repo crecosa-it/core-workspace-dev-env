@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manual Técnico: Wallet BackOffice</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <aside>
+        <h2>Contenido</h2>
+        <nav>
+            <ul>
+                <li><a href="#objetivo">Objetivo General</a></li>
+                <li><a href="#glosario">Glosario de Términos</a></li>
+                <li><a href="#quickstart">Guía de Inicio Rápido</a></li>
+                <li><a href="#seguridad">Módulo de Seguridad</a></li>
+                <li><a href="#billetera">Módulo de Billetera</a>
+                    <ul>
+                        <li><a href="#seccion-cuentas">3.1 Cuentas</a></li>
+                        <li><a href="#seccion-solicitudes">3.2 Solicitudes</a></li>
+                        <li><a href="#seccion-monitoreo">3.3 Monitoreo</a></li>
+                    </ul>
+                </li>
+                <li><a href="#roles">Roles y Perfiles</a></li>
+            </ul>
+        </nav>
+    </aside>
+
+    <main>
+        <header>
+            <div class="print-meta">Documento Técnico Interno | v1.0 | 2026</div>
+            <h1>Manual Técnico: Wallet BackOffice</h1>
+            <p>Ecosistema Administrativo</p>
+        </header>
+
+        <!-- Introducción General -->
+        <section id="intro">
+            <p>Este documento detalla el funcionamiento del <strong>Módulo de Administración de Dinero
+                    Electrónico</strong>, el cual forma parte integral de la plataforma corporativa denominada
+                <strong>BackOffice</strong>. El BackOffice es un sistema centralizado que alberga múltiples módulos
+                operativos de la empresa, permitiendo una gestión unificada y segura de todos los procesos financieros y
+                administrativos.</p>
+        </section>
+
+        <!-- Objetivo General (Descripción del Sistema) -->
+        <section id="objetivo">
+            <h2>Objetivo General y Descripción</h2>
+            <div class="alert alert-info">
+                <span>💡</span>
+                <p><strong>Descripción:</strong> El Wallet BackOffice es el centro de control diseñado para centralizar
+                    y asegurar la gestión operativa de la billetera digital corporativa, garantizando que el flujo de
+                    capital sea transparente y auditable.</p>
+            </div>
+            <p><strong>Funcionalidades Clave:</strong> Gestión de identidad (KYC), control dual de solicitudes,
+                vinculación crediticia y monitoreo de transacciones en tiempo real.</p>
+        </section>
+
+        <!-- Glosario -->
+        <section id="glosario" class="glosario">
+            <h2>Glosario de Términos</h2>
+            <dl>
+                <dt>BackOffice</dt>
+                <dd>Plataforma administrativa interna para la gestión de servicios corporativos.</dd>
+                <dt>RBAC</dt>
+                <dd>Control de Acceso Basado en Roles.</dd>
+                <dt>Control Dual</dt>
+                <dd>Principio donde una operación requiere revisión y aprobación por perfiles distintos.</dd>
+            </dl>
+        </section>
+
+        <!-- Quick Start -->
+        <section id="quickstart">
+            <h2>Guía de Inicio Rápido</h2>
+            <div class="alert alert-success">
+                <p><strong>Ruta Crítica:</strong> Recepción de Solicitud → Revisión Contable (Contador) → Aprobación
+                    Final (Gerencia) → Fondos Disponibles.</p>
+            </div>
+            <div class="step">
+                <h4>Diagrama de Flujo General</h4>
+                <img src="Diagrama_Flujo_General.png" alt="Flujo General">
+                <p><strong>¿Qué sucede?:</strong> Representación del viaje del dinero desde el Onboarding hasta la
+                    Confirmación.</p>
+                <p><strong>Utilidad:</strong> Comprensión visual inmediata de la cadena de mando y dependencias entre
+                    perfiles.</p>
+            </div>
+        </section>
+
+        <!-- Módulo de Seguridad -->
+        <section id="seguridad">
+            <h2>Módulo de Seguridad y Acceso</h2>
+            <div class="step">
+                <h4>01. Control de Acceso</h4>
+                <img src="Billetera_Seguridad_01_Control_Acceso.png" alt="Control Acceso">
+                <p><strong>¿Qué sucede?:</strong> El sistema solicita credenciales únicas y verifica la identidad del
+                    usuario.</p>
+                <p><strong>Utilidad:</strong> Previene accesos no autorizados y garantiza la trazabilidad de cada
+                    acción.</p>
+            </div>
+            <div class="step">
+                <h4>02. Configuración de Perfiles</h4>
+                <img src="Billetera_Seguridad_02_Configuracion_Perfiles.png" alt="Perfiles">
+                <p><strong>¿Qué sucede?:</strong> Los administradores asignan capacidades específicas a cada rol.</p>
+                <p><strong>Utilidad:</strong> Implementa la seguridad RBAC para mitigar riesgos de fraude o errores
+                    humanos.</p>
+            </div>
+            <div class="step">
+                <h4>03. Opciones de Menú Permitidas</h4>
+                <img src="Billetera_Seguridad_03_Opciones_Menu_permitidas.png" alt="Menú Permitido">
+                <p><strong>¿Qué sucede?:</strong> El sistema muestra únicamente los módulos para los cuales el usuario
+                    tiene permiso.</p>
+                <p><strong>Utilidad:</strong> Mantiene la interfaz limpia y oculta secciones sensibles a perfiles no
+                    autorizados.</p>
+            </div>
+        </section>
+
+        <section id="billetera">
+            <h2>Módulo de Administración de Billetera</h2>
+
+            <h3 id="seccion-cuentas">3.1 Sección de Cuentas</h3>
+            <div class="step">
+                <h4>01. Listado de Cuentas</h4>
+                <img src="Billetera_Cuentas_01_Lista_Cuentas.png" alt="Lista Cuentas">
+                <p><strong>¿Qué sucede?:</strong> Se muestra la base de datos de todos los clientes registrados.</p>
+                <p><strong>Utilidad:</strong> Herramienta principal para búsqueda y monitoreo masivo de usuarios.</p>
+            </div>
+            <div class="step">
+                <h4>02. Detalle del Perfil</h4>
+                <img src="Billetera_Cuentas_02_Detalle_Perfil.png" alt="Perfil">
+                <p><strong>¿Qué sucede?:</strong> Se despliega la información personal y legal del cliente.</p>
+                <p><strong>Utilidad:</strong> Permite el cumplimiento de normativas KYC (Conoce a tu Cliente).</p>
+            </div>
+            <div class="step">
+                <h4>03. Saldo de Dinero Electrónico</h4>
+                <img src="Billetera_Cuentas_03_Saldo_Dinero_Electronico.png" alt="Saldos">
+                <p><strong>¿Qué sucede?:</strong> Se visualiza el balance contable de la billetera del cliente.</p>
+                <p><strong>Utilidad:</strong> Proporciona transparencia total sobre los fondos y facilita
+                    conciliaciones.</p>
+            </div>
+            <div class="step">
+                <h4>04. Verificación de Negocio</h4>
+                <img src="Billetera_Cuentas_04_Verificacion_Negocio.png" alt="Negocio">
+                <p><strong>¿Qué sucede?:</strong> Se revisan los datos comerciales de establecimientos afiliados.</p>
+                <p><strong>Utilidad:</strong> Previene el registro de negocios fraudulentos en la red.</p>
+            </div>
+            <div class="step">
+                <h4>05. Línea de Crédito Vinculada</h4>
+                <img src="Billetera_Cuentas_05_Linea_Credito_Vinculada.png" alt="Línea Crédito">
+                <p><strong>¿Qué sucede?:</strong> Se vincula o desvincula al cliente una línea de crédito en su App
+                    (según aplique).</p>
+                <p><strong>Utilidad:</strong> Habilita al cliente para comprar en afiliados o pedir desembolsos a su
+                    billetera.</p>
+            </div>
+
+            <h3 id="seccion-solicitudes">3.2 Sección de Solicitudes</h3>
+            <div class="step">
+                <h4>01. Lista de Solicitudes</h4>
+                <img src="Billetera_Solicitudes_01_Lista.png" alt="Lista Solicitudes">
+                <p><strong>¿Qué sucede?:</strong> Se agrupan todas las peticiones de inyección de saldo entrantes.</p>
+                <p><strong>Utilidad:</strong> Bandeja de entrada operativa que organiza el trabajo por prioridad.</p>
+            </div>
+            <div class="step">
+                <h4>02. Revisión del Contador</h4>
+                <img src="Billetera_Solicitudes_02_Revision_Contador.png" alt="Revisión Contador">
+                <p><strong>¿Qué sucede?:</strong> El Contador valida que el depósito bancario coincida con el soporte
+                    digital.</p>
+                <p><strong>Utilidad:</strong> Asegura que el dinero virtual tenga respaldo bancario real.</p>
+            </div>
+            <div class="step">
+                <h4>03. Aprobación del Gerente</h4>
+                <img src="Billetera_Solicitudes_03_Aprobacion_Gerente.png" alt="Aprobación Gerente">
+                <p><strong>¿Qué sucede?:</strong> La Gerencia General otorga el visto bueno final a la operación.</p>
+                <p><strong>Utilidad:</strong> Aplica el Control Dual para autorizar el flujo final de fondos.</p>
+            </div>
+            <div class="step">
+                <h4>04. Solicitud Aprobada</h4>
+                <img src="Billetera_Solicitudes_04_Solicitud_aprobada.png" alt="Aprobada">
+                <p><strong>¿Qué sucede?:</strong> Se cierra el caso y se envía notificación de saldo exitoso al cliente.
+                </p>
+                <p><strong>Utilidad:</strong> Finaliza el ciclo de vida de la solicitud con feedback inmediato.</p>
+            </div>
+
+            <h3 id="seccion-monitoreo">3.3 Sección de Monitoreo</h3>
+            <div class="step">
+                <h4>01. Transacciones Recientes</h4>
+                <img src="Billetera_Monitoreo_01_Transacciones_Recientes.png" alt="Monitoreo">
+                <p><strong>¿Qué sucede?:</strong> Se despliega el flujo de movimientos de la red en tiempo real.</p>
+                <p><strong>Utilidad:</strong> Proporciona conciencia situacional sobre la actividad del sistema.</p>
+            </div>
+            <div class="step">
+                <h4>02. Comprobantes de Transacciones</h4>
+                <img src="Billetera_Monitoreo_02_Comprobantes_Transacciones.png" alt="Comprobantes">
+                <p><strong>¿Qué sucede?:</strong> Permite la descarga de soportes digitales de cualquier transacción.
+                </p>
+                <p><strong>Utilidad:</strong> Herramienta clave para servicio al cliente y auditorías externas.</p>
+            </div>
+        </section>
+
+        <!-- Roles y Perfiles -->
+        <section id="roles">
+            <h2>Roles y Perfiles de Usuario</h2>
+            <div class="grid">
+                <div class="card"><strong>Operador:</strong> Soporte y gestión diaria de cuentas.</div>
+                <div class="card"><strong>Contador:</strong> Validación técnica y auditoría financiera.</div>
+                <div class="card"><strong>Gerente:</strong> Autoridad máxima de aprobación de fondos.</div>
+            </div>
+        </section>
+    </main>
+
+</body>
+
+</html>
